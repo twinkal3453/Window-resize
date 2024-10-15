@@ -30,6 +30,21 @@ function App() {
   });
   const { col, row } = dimentions;
 
+  // TextArea related state and code..
+  const [text, setText] = useState("");
+
+  // Handle text change
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+  };
+
+  // Split text by new lines
+  const lines = text.split("\n");
+
+  console.log("Line 45", text);
+
+  /**------------------------- end --------------------------------------- */
+
   const handleDivHeightWidth = (e) => {
     const returnCoords = {
       col: e.clientX,
@@ -66,7 +81,7 @@ function App() {
           gridTemplateColumns: `${col ? getValue(col) : "auto"} 2px auto`,
         }}
       >
-        <div style={{ height: "100%", width: "100%", background: "yellow" }}>
+        <div style={{ height: "100%", width: "100%", background: "white" }}>
           <h2 onClick={(e) => handleClickThrottled1(e)}>hello</h2>
         </div>
         <Divider
@@ -85,8 +100,39 @@ function App() {
           }
           style={{ cursor: "col-resize" }}
         />
-        <div style={{ height: "100%", width: "100%", background: "pink" }}>
-          <h2>Hello</h2>
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            background: "white",
+            border: "1px solid red",
+          }}
+        >
+          {/* the TextArea component */}
+          <div className="text-area-container">
+            {/* Render the colored text overlay */}
+            <div className="text-overlay" style={{ overflowY: "auto" }}>
+              {lines.map((line, index) => (
+                <div
+                  key={index}
+                  style={{ color: "pink" }}
+                  className="colored-line"
+                >
+                  {
+                    line ||
+                      "\u00A0" /* Render non-breaking space for empty lines */
+                  }
+                </div>
+              ))}
+            </div>
+
+            {/* Transparent textarea for input */}
+            <textarea
+              className="text-input"
+              value={text}
+              onChange={handleTextChange}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,28 @@
+.parent_component{
+    position: relative;
+    height: 10rem;
+    width: 30rem;
+}
+.textField_inputValue{
+    height: 100%;
+    width: 100%;
+    border: 1px solid green;
+    overflow-y: auto;
+    line-height: 1.5
+}
+.text_field{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    caret-color: black;
+    outline: none;
+    line-height: 1.5
+}
+
+.colored-line {
+    white-space: pre-wrap; /* Ensures text wraps correctly */
+  }

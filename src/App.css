@@ -1,0 +1,43 @@
+.text-area-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border: 1px solid cyan;
+  }
+  
+  .text-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: transparent;
+    caret-color: black;
+    border: 1px solid green;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    resize: none;
+    z-index: 1;
+    outline: none;
+    
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    z-index: 0;
+    pointer-events: none; /* Allows clicks to pass through */
+    border: 1px solid green;
+  }
+  
+  .colored-line {
+    white-space: pre-wrap; /* Ensures text wraps correctly */
+  }
